@@ -1,0 +1,188 @@
+{
+  "textures": [
+    {
+      "image": "mario-atlas.png",
+      "format": "RGBA8888",
+      "size": {
+        "w": 256,
+        "h": 256
+      },
+      "scale": 1,
+      "frames": [
+        {
+          "filename": "mario-idle",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 16,
+            "h": 16
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 16,
+            "h": 16
+          },
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 16,
+            "h": 16
+          }
+        },
+        {
+          "filename": "mario-walk-1",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 16,
+            "h": 16
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 16,
+            "h": 16
+          },
+          "frame": {
+            "x": 16,
+            "y": 0,
+            "w": 16,
+            "h": 16
+          }
+        },
+        {
+          "filename": "mario-walk-2",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 16,
+            "h": 16
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 16,
+            "h": 16
+          },
+          "frame": {
+            "x": 32,
+            "y": 0,
+            "w": 16,
+            "h": 16
+          }
+        },
+        {
+          "filename": "mario-jump",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 16,
+            "h": 16
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 16,
+            "h": 16
+          },
+          "frame": {
+            "x": 48,
+            "y": 0,
+            "w": 16,
+            "h": 16
+          }
+        },
+        {
+          "filename": "box-resume",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 32,
+            "h": 32
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 32,
+            "h": 32
+          },
+          "frame": {
+            "x": 0,
+            "y": 16,
+            "w": 32,
+            "h": 32
+          }
+        },
+        {
+          "filename": "box-portfolio",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 32,
+            "h": 32
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 32,
+            "h": 32
+          },
+          "frame": {
+            "x": 32,
+            "y": 16,
+            "w": 32,
+            "h": 32
+          }
+        },
+        {
+          "filename": "box-contact",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 32,
+            "h": 32
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 32,
+            "h": 32
+          },
+          "frame": {
+            "x": 64,
+            "y": 16,
+            "w": 32,
+            "h": 32
+          }
+        },
+        {
+          "filename": "ground-tile",
+          "rotated": false,
+          "trimmed": false,
+          "sourceSize": {
+            "w": 16,
+            "h": 16
+          },
+          "spriteSourceSize": {
+            "x": 0,
+            "y": 0,
+            "w": 16,
+            "h": 16
+          },
+          "frame": {
+            "x": 0,
+            "y": 48,
+            "w": 16,
+            "h": 16
+          }
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "app": "https://www.codeandweb.com/texturepacker",
+    "version": "1.1",
+    "smartupdate": "$TexturePacker:SmartUpdate:8a2c8f7cc2e0bf5c5ab647e72e4b5cf0:c8ba3b59b7096e829da56a55b90dfcfc:ba3ce86008b7bcd8e25d9cbaa2b78cb1$"
+  }
+}

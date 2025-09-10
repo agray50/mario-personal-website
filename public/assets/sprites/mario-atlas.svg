@@ -1,0 +1,72 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <!-- Mario idle (0,0,16,16) -->
+  <g transform="translate(0,0)">
+    <rect x="2" y="2" width="12" height="4" fill="#8B4513" />
+    <rect x="2" y="6" width="12" height="4" fill="#F5DEB3" />
+    <rect x="0" y="10" width="16" height="6" fill="#FF0000" />
+    <rect x="4" y="6" width="2" height="2" fill="#000" />
+    <rect x="10" y="6" width="2" height="2" fill="#000" />
+    <rect x="6" y="8" width="4" height="1" fill="#000" />
+  </g>
+  
+  <!-- Mario walk 1 (16,0,16,16) -->
+  <g transform="translate(16,0)">
+    <rect x="2" y="2" width="12" height="4" fill="#8B4513" />
+    <rect x="2" y="6" width="12" height="4" fill="#F5DEB3" />
+    <rect x="0" y="10" width="16" height="6" fill="#FF0000" />
+    <rect x="4" y="6" width="2" height="2" fill="#000" />
+    <rect x="10" y="6" width="2" height="2" fill="#000" />
+    <rect x="6" y="8" width="4" height="1" fill="#000" />
+    <rect x="0" y="14" width="4" height="2" fill="#8B4513" />
+  </g>
+  
+  <!-- Mario walk 2 (32,0,16,16) -->
+  <g transform="translate(32,0)">
+    <rect x="2" y="2" width="12" height="4" fill="#8B4513" />
+    <rect x="2" y="6" width="12" height="4" fill="#F5DEB3" />
+    <rect x="0" y="10" width="16" height="6" fill="#FF0000" />
+    <rect x="4" y="6" width="2" height="2" fill="#000" />
+    <rect x="10" y="6" width="2" height="2" fill="#000" />
+    <rect x="6" y="8" width="4" height="1" fill="#000" />
+    <rect x="12" y="14" width="4" height="2" fill="#8B4513" />
+  </g>
+  
+  <!-- Mario jump (48,0,16,16) -->
+  <g transform="translate(48,0)">
+    <rect x="2" y="2" width="12" height="4" fill="#8B4513" />
+    <rect x="2" y="6" width="12" height="4" fill="#F5DEB3" />
+    <rect x="0" y="10" width="16" height="6" fill="#FF0000" />
+    <rect x="4" y="6" width="2" height="2" fill="#000" />
+    <rect x="10" y="6" width="2" height="2" fill="#000" />
+    <rect x="6" y="8" width="4" height="1" fill="#000" />
+    <rect x="0" y="12" width="4" height="2" fill="#8B4513" />
+    <rect x="12" y="12" width="4" height="2" fill="#8B4513" />
+  </g>
+  
+  <!-- Resume box (0,16,32,32) -->
+  <g transform="translate(0,16)">
+    <rect x="0" y="0" width="32" height="32" fill="#FFD700" stroke="#000" stroke-width="2" />
+    <text x="16" y="20" font-family="Arial" font-size="8" text-anchor="middle" fill="#000">R</text>
+  </g>
+  
+  <!-- Portfolio box (32,16,32,32) -->
+  <g transform="translate(32,16)">
+    <rect x="0" y="0" width="32" height="32" fill="#00FF00" stroke="#000" stroke-width="2" />
+    <text x="16" y="20" font-family="Arial" font-size="8" text-anchor="middle" fill="#000">P</text>
+  </g>
+  
+  <!-- Contact box (64,16,32,32) -->
+  <g transform="translate(64,16)">
+    <rect x="0" y="0" width="32" height="32" fill="#0080FF" stroke="#000" stroke-width="2" />
+    <text x="16" y="20" font-family="Arial" font-size="8" text-anchor="middle" fill="#000">C</text>
+  </g>
+  
+  <!-- Ground tile (0,48,16,16) -->
+  <g transform="translate(0,48)">
+    <rect x="0" y="0" width="16" height="16" fill="#8B4513" />
+    <rect x="2" y="2" width="12" height="2" fill="#A0522D" />
+    <rect x="2" y="6" width="12" height="2" fill="#A0522D" />
+    <rect x="2" y="10" width="12" height="2" fill="#A0522D" />
+    <rect x="2" y="14" width="12" height="2" fill="#A0522D" />
+  </g>
+</svg>

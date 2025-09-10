@@ -1,0 +1,41 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Underground/Cave theme -->
+  <defs>
+    <linearGradient id="caveGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2F4F4F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Dark cave background -->
+  <rect width="800" height="600" fill="url(#caveGradient)" />
+  
+  <!-- Cave ceiling -->
+  <path d="M 0,0 Q 200,50 400,20 Q 600,60 800,10 L 800,80 Q 600,100 400,70 Q 200,90 0,60 Z" fill="#696969" />
+  
+  <!-- Stalactites -->
+  <g fill="#808080">
+    <polygon points="150,80 140,80 145,140" />
+    <polygon points="350,70 340,70 345,120" />
+    <polygon points="550,80 540,80 545,130" />
+    <polygon points="720,70 710,70 715,110" />
+  </g>
+  
+  <!-- Cave floor -->
+  <path d="M 0,520 Q 200,480 400,510 Q 600,470 800,500 L 800,600 L 0,600 Z" fill="#4A4A4A" />
+  
+  <!-- Stalagmites -->
+  <g fill="#696969">
+    <polygon points="120,520 130,520 125,470" />
+    <polygon points="320,510 330,510 325,460" />
+    <polygon points="520,500 530,500 525,450" />
+    <polygon points="680,500 690,500 685,460" />
+  </g>
+  
+  <!-- Glowing crystals -->
+  <g fill="#9370DB" opacity="0.6">
+    <circle cx="180" cy="480" r="8" />
+    <circle cx="420" cy="490" r="10" />
+    <circle cx="620" cy="485" r="6" />
+  </g>
+</svg>

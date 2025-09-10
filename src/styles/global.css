@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* GameBoy Color Palette */
+:root {
+  --gameboy-darkest: #0f380f;
+  --gameboy-dark: #306230;
+  --gameboy-light: #8bac0f;
+  --gameboy-lightest: #9bbc0f;
+  --gameboy-screen: #c7d32c;
+  --gameboy-shell: #8b956d;
+  --gameboy-buttons: #71816a;
+}
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Press Start 2P', monospace;
+  background-color: var(--gameboy-darkest);
+  color: var(--gameboy-lightest);
+}
+
+#root {
+  height: 100%;
+  min-height: 100vh;
+}
+
+/* Pixel-perfect rendering */
+img, canvas {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Skip navigation link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--gameboy-lightest);
+  color: var(--gameboy-darkest);
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 1000;
+  font-size: 12px;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Button press animation */
+@keyframes button-press {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+.btn-press {
+  animation: button-press 0.1s ease-in-out;
+}
+
+/* Smooth transitions for GameBoy theme */
+.transition-all {
+  transition: all 0.3s ease-in-out;
+}

@@ -1,0 +1,14 @@
+venv
+venv_linux
+__pycache__
+.ruff_cache
+.pytest_cache
+node_modules/
+
+# Claude Code related files and directories
+.claude/
+PRPs/
+
+# Markdown files (except root README.md)
+*.md
+!README.md
