@@ -11,6 +11,22 @@
   --gameboy-screen: #c7d32c;
   --gameboy-shell: #8b956d;
   --gameboy-buttons: #71816a;
+  
+  /* Enhanced GameBoy Responsive Dimensions - Slower scaling */
+  --gameboy-width: clamp(400px, 50vw, 700px);
+  --gameboy-screen-width: clamp(320px, 40vw, 560px);
+  --gameboy-screen-height: clamp(240px, calc(var(--gameboy-screen-width) * 0.75), 420px);
+  
+  /* Proportional scaling factors */
+  --gameboy-scale-factor: calc(var(--gameboy-width) / 400px);
+  --gameboy-text-scale: clamp(0.75rem, 1.5vw, 2rem);
+  --gameboy-element-scale: clamp(1rem, 2.5vw, 4rem);
+  
+  /* Button scaling variables */
+  --gameboy-dpad-size: clamp(64px, 6vw, 100px);
+  --gameboy-action-button-size: clamp(40px, 4vw, 70px);
+  --gameboy-select-start-width: clamp(56px, 5vw, 80px);
+  --gameboy-select-start-height: clamp(16px, 1.5vw, 24px);
 }
 
 /* Global styles */
@@ -72,4 +88,250 @@ img, canvas {
 /* Smooth transitions for GameBoy theme */
 .transition-all {
   transition: all 0.3s ease-in-out;
+}
+
+/* Enhanced GameBoy Interface Scaling */
+.gameboy-enhanced {
+  /* Modern viewport-based scaling */
+  width: var(--gameboy-width);
+  aspect-ratio: 10/16;
+  container-type: inline-size;
+  
+  /* Ensure pixel-perfect scaling */
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Container Queries for responsive GameBoy interface */
+@container (min-width: 500px) {
+  .gameboy-enhanced {
+    /* Enhanced shadow and depth for larger sizes */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .gameboy-enhanced .text-sm {
+    font-size: var(--gameboy-text-scale);
+  }
+}
+
+@container (min-width: 768px) {
+  .gameboy-enhanced {
+    /* Even more depth for tablet and larger */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4), 0 12px 15px -5px rgba(0, 0, 0, 0.25);
+  }
+}
+
+@container (min-width: 1024px) {
+  .gameboy-enhanced {
+    /* Maximum enhancement for desktop */
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.5), 0 15px 20px -8px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Enhanced GameBoy screen scaling */
+.gameboy-screen-enhanced {
+  width: var(--gameboy-screen-width);
+  height: var(--gameboy-screen-height);
+  
+  /* Maintain crisp pixel rendering */
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  
+  /* Simple reliable centering */
+  position: relative;
+  margin: 0 auto;
+}
+
+/* Proportional element scaling utilities */
+.gameboy-proportional-text {
+  font-size: var(--gameboy-text-scale);
+}
+
+.gameboy-proportional-element {
+  width: var(--gameboy-element-scale);
+  height: var(--gameboy-element-scale);
+}
+
+/* GameBoy Button Scaling Classes */
+.gameboy-dpad {
+  width: var(--gameboy-dpad-size);
+  height: var(--gameboy-dpad-size);
+}
+
+.gameboy-dpad-button-h {
+  width: calc(var(--gameboy-dpad-size) * 0.4375); /* 7/16 of dpad size */
+  height: calc(var(--gameboy-dpad-size) * 0.3125); /* 5/16 of dpad size */
+}
+
+.gameboy-dpad-button-v {
+  width: calc(var(--gameboy-dpad-size) * 0.3125); /* 5/16 of dpad size */
+  height: calc(var(--gameboy-dpad-size) * 0.4375); /* 7/16 of dpad size */
+}
+
+.gameboy-dpad-bar-h {
+  height: calc(var(--gameboy-dpad-size) * 0.25); /* 1/4 of dpad size */
+}
+
+.gameboy-dpad-bar-v {
+  width: calc(var(--gameboy-dpad-size) * 0.25); /* 1/4 of dpad size */
+}
+
+.gameboy-action-button {
+  width: var(--gameboy-action-button-size);
+  height: var(--gameboy-action-button-size);
+}
+
+.gameboy-select-start-button {
+  width: var(--gameboy-select-start-width);
+  height: var(--gameboy-select-start-height);
+}
+
+/* Desktop scaling - more conservative */
+@media (min-width: 1024px) {
+  :root {
+    --gameboy-width: clamp(500px, 45vw, 800px);
+    --gameboy-screen-width: clamp(400px, 36vw, 640px);
+  }
+}
+
+/* Ultra-wide support - still conservative scaling */
+@media (min-width: 1440px) {
+  :root {
+    --gameboy-width: clamp(600px, 40vw, 900px);
+    --gameboy-screen-width: clamp(480px, 32vw, 720px);
+  }
+}
+
+/* Fullscreen mode support - Keep GameBoy classic shape */
+:fullscreen .gameboy-enhanced {
+  width: clamp(500px, 40vw, 800px) !important;
+  aspect-ratio: 10/16 !important; /* Maintain classic GameBoy proportions */
+  height: auto !important;
+}
+
+:fullscreen .gameboy-screen-enhanced {
+  width: clamp(400px, 32vw, 640px) !important;
+  height: clamp(300px, calc(32vw * 0.75), 480px) !important;
+  aspect-ratio: 4/3 !important; /* Classic GameBoy screen ratio */
+}
+
+/* Fullscreen background expansion */
+:fullscreen {
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+:fullscreen body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Remove padding in fullscreen and center GameBoy */
+:fullscreen main {
+  padding: 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 100vh !important;
+  width: 100vw !important;
+}
+
+/* Simple, reliable Phaser container centering */
+#phaser-game-container {
+  width: 100% !important;
+  height: 100% !important;
+  position: relative !important;
+  text-align: center !important;
+  line-height: 0 !important;
+}
+
+#phaser-game-container:before {
+  content: '' !important;
+  display: inline-block !important;
+  height: 100% !important;
+  vertical-align: middle !important;
+}
+
+#phaser-game-container canvas {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* Fullscreen uses same simple centering */
+:fullscreen #phaser-game-container {
+  width: 100% !important;
+  height: 100% !important;
+  position: relative !important;
+  text-align: center !important;
+  line-height: 0 !important;
+}
+
+:fullscreen #phaser-game-container:before {
+  content: '' !important;
+  display: inline-block !important;
+  height: 100% !important;
+  vertical-align: middle !important;
+}
+
+:fullscreen #phaser-game-container canvas {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* Additional centering safeguards */
+.phaser-game-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Ensure GameBoy screen content is centered */
+.gameboy-screen-enhanced > * {
+  margin: 0 auto !important;
+}
+
+/* Resolution-specific centering fixes */
+@media (min-width: 768px) and (max-width: 1024px) {
+  #phaser-game-container {
+    min-height: 100% !important;
+  }
+  
+  #phaser-game-container canvas {
+    max-width: 95% !important;
+    max-height: 95% !important;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  #phaser-game-container canvas {
+    max-width: 98% !important;
+    max-height: 98% !important;
+  }
+}
+
+@media (min-width: 1441px) {
+  #phaser-game-container canvas {
+    max-width: 99% !important;
+    max-height: 99% !important;
+  }
+}
+
+/* Ultra-wide screen fixes */
+@media (min-aspect-ratio: 16/9) {
+  #phaser-game-container {
+    align-content: center !important;
+    justify-content: center !important;
+  }
 }

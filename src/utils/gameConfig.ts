@@ -8,8 +8,8 @@ import MainScene from '../components/Game/scenes/MainScene'
  */
 const gameConfig: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO, // WebGL with Canvas fallback
-  width: 256, // GameBoy screen width
-  height: 192, // GameBoy screen height (adjusted for platformer)
+  width: 640, // Enhanced canvas width for improved visibility (2x scaling)
+  height: 480, // Enhanced canvas height for better gameplay experience (2x scaling)
   parent: 'phaser-game-container', // Container div ID
   backgroundColor: '#c7d32c', // GameBoy screen color
   
@@ -25,20 +25,31 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
   // Scene configuration
   scene: [PreloadScene, MainScene],
   
-  // Rendering configuration for pixel art
+  // Rendering configuration for pixel art - enhanced for larger scale
   render: {
     pixelArt: true,
     antialias: false,
     roundPixels: true,
+    powerPreference: 'high-performance', // Better performance for larger canvas
   },
   
-  // Scale configuration for responsive design
+  // Scale configuration for enhanced responsive design with larger canvas
   scale: {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
     parent: 'phaser-game-container',
-    width: 256,
-    height: 192,
+    width: 640,
+    height: 480,
+    min: {
+      width: 320,
+      height: 240,
+    },
+    max: {
+      width: 1920,
+      height: 1440,
+    },
+    expandParent: false,
+    fullscreenTarget: 'phaser-game-container',
   },
   
   // Input configuration
@@ -60,34 +71,34 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
 
 export default gameConfig
 
-// Game constants for Mario platformer mechanics
+// Game constants for Mario platformer mechanics - Enhanced for 2x scaling
 export const GAME_CONSTANTS = {
   PLAYER: {
-    SPEED: 160,
-    JUMP_VELOCITY: -500,
-    SIZE: { width: 16, height: 16 },
-    GROUND_FRICTION: 800,
-    AIR_FRICTION: 300,
+    SPEED: 320, // Scaled 2x for enhanced canvas
+    JUMP_VELOCITY: -1000, // Scaled 2x for enhanced canvas
+    SIZE: { width: 32, height: 32 }, // Scaled 2x for enhanced canvas
+    GROUND_FRICTION: 1600, // Scaled 2x for enhanced canvas
+    AIR_FRICTION: 600, // Scaled 2x for enhanced canvas
   },
   
   WORLD: {
-    GRAVITY: 800,
-    GROUND_LEVEL: 160,
-    BOUNDS: { width: 256, height: 192 },
+    GRAVITY: 1600, // Scaled 2x for enhanced canvas
+    GROUND_LEVEL: 400, // Scaled 2x for enhanced 480px height
+    BOUNDS: { width: 640, height: 480 }, // Enhanced dimensions for 2x scaling
   },
   
   BOXES: {
-    SIZE: { width: 32, height: 32 },
-    BOUNCE_FORCE: -100,
+    SIZE: { width: 64, height: 64 }, // Scaled 2x for enhanced canvas
+    BOUNCE_FORCE: -200, // Scaled 2x for enhanced canvas
     POSITIONS: {
-      RESUME: { x: 80, y: 128 },
-      PORTFOLIO: { x: 128, y: 128 },
-      CONTACT: { x: 176, y: 128 },
+      RESUME: { x: 200, y: 336 }, // Scaled 2x and repositioned for enhanced canvas
+      PORTFOLIO: { x: 320, y: 336 }, // Scaled 2x and repositioned for enhanced canvas
+      CONTACT: { x: 440, y: 336 }, // Scaled 2x and repositioned for enhanced canvas
     },
   },
   
   ANIMATIONS: {
-    FRAME_RATE: 8, // 8 FPS for retro feel
+    FRAME_RATE: 8, // 8 FPS for retro feel - unchanged
     WALK_FRAMES: ['mario-idle', 'mario-walk-1', 'mario-walk-2'],
     JUMP_FRAME: 'mario-jump',
   },

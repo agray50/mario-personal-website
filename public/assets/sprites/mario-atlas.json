@@ -1,7 +1,7 @@
 {
   "textures": [
     {
-      "image": "mario-atlas.png",
+      "image": "mario_1.png",
       "format": "RGBA8888",
       "size": {
         "w": 256,
@@ -24,7 +24,7 @@
             "h": 16
           },
           "frame": {
-            "x": 0,
+            "x": 80,
             "y": 0,
             "w": 16,
             "h": 16
@@ -45,7 +45,7 @@
             "h": 16
           },
           "frame": {
-            "x": 16,
+            "x": 96,
             "y": 0,
             "w": 16,
             "h": 16
@@ -66,7 +66,7 @@
             "h": 16
           },
           "frame": {
-            "x": 32,
+            "x": 112,
             "y": 0,
             "w": 16,
             "h": 16
@@ -87,7 +87,7 @@
             "h": 16
           },
           "frame": {
-            "x": 48,
+            "x": 128,
             "y": 0,
             "w": 16,
             "h": 16
@@ -181,8 +181,8 @@
     }
   ],
   "meta": {
-    "app": "https://www.codeandweb.com/texturepacker",
-    "version": "1.1",
-    "smartupdate": "$TexturePacker:SmartUpdate:8a2c8f7cc2e0bf5c5ab647e72e4b5cf0:c8ba3b59b7096e829da56a55b90dfcfc:ba3ce86008b7bcd8e25d9cbaa2b78cb1$"
+    "app": "Mario GameBoy Enhancement",
+    "version": "1.0",
+    "description": "Professional Mario sprites atlas using mario_1.png"
   }
 }

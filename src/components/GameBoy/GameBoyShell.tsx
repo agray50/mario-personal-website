@@ -23,13 +23,21 @@ const GameBoyShell: React.FC<GameBoyShellProps> = ({
   
   return (
     <div className={`gameboy-shell ${className}`}>
-      {/* Main GameBoy body */}
-      <div className="relative w-full max-w-sm sm:w-80 bg-gameboy-shell border-4 border-gameboy-buttons rounded-3xl shadow-2xl p-4 sm:p-6 mx-auto">
+      {/* Main GameBoy body - Enhanced viewport-based scaling */}
+      <div 
+        className="relative bg-gameboy-shell border-4 border-gameboy-buttons rounded-3xl shadow-2xl p-4 sm:p-6 mx-auto gameboy-enhanced" 
+        style={{
+          width: 'var(--gameboy-width)',
+          aspectRatio: '10/16', 
+          imageRendering: 'pixelated',
+          containerType: 'inline-size'
+        }}
+      >
         {/* Top section with brand text */}
         <div className="text-center mb-4">
-          <div className="text-xs font-gameboy text-gameboy-dark mb-1">GAME BOY</div>
-          <div className="w-16 h-4 bg-gameboy-buttons rounded-full mx-auto mb-2">
-            <div className="w-12 h-2 bg-gameboy-dark rounded-full mx-auto translate-y-1"></div>
+          <div className="text-sm font-gameboy text-gameboy-dark mb-1">GAME BOY</div>
+          <div className="w-20 h-5 bg-gameboy-buttons rounded-full mx-auto mb-2">
+            <div className="w-16 h-2 bg-gameboy-dark rounded-full mx-auto translate-y-1"></div>
           </div>
         </div>
 
@@ -41,7 +49,7 @@ const GameBoyShell: React.FC<GameBoyShellProps> = ({
           
           {/* Screen label */}
           <div className="text-center mt-2">
-            <div className="text-xs font-gameboy text-gameboy-dark">DOT MATRIX WITH STEREO SOUND</div>
+            <div className="text-sm font-gameboy text-gameboy-dark">DOT MATRIX WITH STEREO SOUND</div>
           </div>
         </div>
 
@@ -50,16 +58,16 @@ const GameBoyShell: React.FC<GameBoyShellProps> = ({
 
         {/* Bottom section with Nintendo branding */}
         <div className="text-center mt-4">
-          <div className="text-xs font-gameboy text-gameboy-dark">Nintendo</div>
+          <div className="text-sm font-gameboy text-gameboy-dark">Nintendo</div>
         </div>
 
-        {/* Speaker holes */}
-        <div className="absolute top-4 right-6">
+        {/* Speaker holes - Enhanced for proportional scaling */}
+        <div className="absolute top-6 right-8">
           <div className="grid grid-cols-6 gap-1">
             {Array.from({ length: 36 }, (_, i) => (
               <div
                 key={i}
-                className="w-1 h-1 bg-gameboy-dark rounded-full"
+                className="w-1.5 h-1.5 bg-gameboy-dark rounded-full"
               />
             ))}
           </div>

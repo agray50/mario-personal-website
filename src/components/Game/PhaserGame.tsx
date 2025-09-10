@@ -35,6 +35,7 @@ const PhaserGame: React.FC<PhaserGameProps> = ({
 
       // Setup event listeners
       const handleGameReady = () => {
+        console.log('🎉 React received GAME_READY event - hiding loading screen...')
         setIsGameReady(true)
         console.log('Phaser game ready!')
         
@@ -62,6 +63,7 @@ const PhaserGame: React.FC<PhaserGameProps> = ({
       }
 
       const handleLoadingProgress = (progress: number) => {
+        console.log(`📊 Loading progress: ${progress}%`)
         setLoadingProgress(progress)
       }
 

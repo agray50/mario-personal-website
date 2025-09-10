@@ -69,6 +69,14 @@ class GameEventBus {
   public static readonly SHOW_CONTENT = 'show-content'
   public static readonly HIDE_CONTENT = 'hide-content'
 
+  // GameBoy button control events
+  public static readonly GAMEBOY_BUTTON_PRESS = 'gameboy-button-press'
+  public static readonly GAMEBOY_BUTTON_RELEASE = 'gameboy-button-release'
+  public static readonly GAMEBOY_DPAD_LEFT = 'gameboy-dpad-left'
+  public static readonly GAMEBOY_DPAD_RIGHT = 'gameboy-dpad-right'
+  public static readonly GAMEBOY_BUTTON_A = 'gameboy-button-a'
+  public static readonly GAMEBOY_BUTTON_B = 'gameboy-button-b'
+
   // Asset loading events
   public static readonly ASSETS_LOADING = 'assets-loading'
   public static readonly ASSETS_LOADED = 'assets-loaded'
@@ -78,6 +86,9 @@ class GameEventBus {
   public static readonly GAME_STARTED = 'game-started'
   public static readonly GAME_PAUSED = 'game-paused'
   public static readonly GAME_RESUMED = 'game-resumed'
+
+  // Map progression events
+  public static readonly AREA_CHANGED = 'area-changed'
 }
 
 // Export singleton instance
@@ -96,10 +107,17 @@ export const GAME_EVENTS = {
   BUTTON_PRESSED: GameEventBus.BUTTON_PRESSED,
   SHOW_CONTENT: GameEventBus.SHOW_CONTENT,
   HIDE_CONTENT: GameEventBus.HIDE_CONTENT,
+  GAMEBOY_BUTTON_PRESS: GameEventBus.GAMEBOY_BUTTON_PRESS,
+  GAMEBOY_BUTTON_RELEASE: GameEventBus.GAMEBOY_BUTTON_RELEASE,
+  GAMEBOY_DPAD_LEFT: GameEventBus.GAMEBOY_DPAD_LEFT,
+  GAMEBOY_DPAD_RIGHT: GameEventBus.GAMEBOY_DPAD_RIGHT,
+  GAMEBOY_BUTTON_A: GameEventBus.GAMEBOY_BUTTON_A,
+  GAMEBOY_BUTTON_B: GameEventBus.GAMEBOY_BUTTON_B,
   ASSETS_LOADING: GameEventBus.ASSETS_LOADING,
   ASSETS_LOADED: GameEventBus.ASSETS_LOADED,
   LOADING_PROGRESS: GameEventBus.LOADING_PROGRESS,
   GAME_STARTED: GameEventBus.GAME_STARTED,
   GAME_PAUSED: GameEventBus.GAME_PAUSED,
   GAME_RESUMED: GameEventBus.GAME_RESUMED,
+  AREA_CHANGED: GameEventBus.AREA_CHANGED,
 } as const

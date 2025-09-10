@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { GameBoyShell } from '../components/GameBoy'
-import { Header, Footer, BackgroundSelector } from '../components/Layout'
+import { Footer, BackgroundSelector } from '../components/Layout'
 import { preloadCriticalResources, measureWebVitals } from '../utils/performance'
 import { initAccessibility, gameAccessibility, highContrastSupport, reducedMotionSupport } from '../utils/accessibility'
+import EventBus, { GAME_EVENTS } from '../components/Game/EventBus'
 
 const Home: React.FC = () => {
   const navigate = useNavigate()
   const [currentBackground, setCurrentBackground] = useState('world-1')
+  const [gameTheme, setGameTheme] = useState('overworld')
 
   // Initialize performance optimizations and accessibility
   useEffect(() => {
@@ -17,6 +19,19 @@ const Home: React.FC = () => {
     highContrastSupport.applyHighContrast()
     reducedMotionSupport.applyReducedMotion()
     gameAccessibility.announceContentLoad('home')
+
+    // Listen for game area changes to update background theme
+    const handleAreaChange = (data: { area: number; theme: string }) => {
+      console.log('Area changed:', data)
+      setGameTheme(data.theme)
+    }
+
+    EventBus.on(GAME_EVENTS.AREA_CHANGED, handleAreaChange)
+
+    // Cleanup event listener on unmount
+    return () => {
+      EventBus.off(GAME_EVENTS.AREA_CHANGED, handleAreaChange)
+    }
   }, [])
 
   const handleBackgroundChange = (backgroundId: string) => {
@@ -42,11 +57,22 @@ const Home: React.FC = () => {
     }
   }
 
+  // Get background style based on game theme
+  const getThemeBackground = () => {
+    const themes = {
+      overworld: 'linear-gradient(to bottom, #87CEEB, #98FB98)', // Sky blue to light green
+      underground: 'linear-gradient(to bottom, #2F4F4F, #000000)', // Dark slate gray to black
+      sky: 'linear-gradient(to bottom, #87CEFA, #FFFFFF)', // Light sky blue to white
+      castle: 'linear-gradient(to bottom, #8B0000, #2F2F2F)' // Dark red to dark gray
+    }
+    return themes[gameTheme as keyof typeof themes] || themes.overworld
+  }
+
   return (
     <div 
-      className="min-h-screen font-gameboy text-gameboy-lightest relative"
+      className="min-h-screen font-gameboy text-gameboy-lightest relative transition-all duration-1000"
       style={{
-        backgroundImage: `url(/assets/backgrounds/mario-${currentBackground}.svg)`,
+        background: getThemeBackground(),
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
@@ -62,30 +88,24 @@ const Home: React.FC = () => {
           Skip to main content
         </a>
         
-        {/* Header */}
-        <Header />
+        {/* Header removed to provide more space for GameBoy interface */}
 
         {/* Main content */}
-        <main id="main-content" className="flex flex-col items-center justify-center p-4">
-          <div className="text-center mb-4">
-            <h2 className="text-lg mb-4">Welcome to my GameBoy Portfolio</h2>
-            <p className="text-xs mb-4">
-              Navigate through my resume, portfolio, and contact info by playing the Mario game!
-            </p>
-            
-            {/* Background Selector */}
-            <BackgroundSelector
-              currentBackground={currentBackground}
-              onBackgroundChange={handleBackgroundChange}
-              className="mb-6"
-            />
-          </div>
-
-          {/* GameBoy Component */}
+        <main id="main-content" className="flex flex-col items-center justify-center min-h-screen p-4">
+          {/* GameBoy Component - Now the primary focus */}
           <GameBoyShell 
             className="mx-auto" 
             onContentTrigger={handleContentTrigger}
           />
+
+          {/* Background Selector - Moved to a less prominent position */}
+          <div className="mt-6 opacity-75">
+            <BackgroundSelector
+              currentBackground={currentBackground}
+              onBackgroundChange={handleBackgroundChange}
+              className="scale-75"
+            />
+          </div>
 
           {/* Direct navigation links for accessibility */}
           <nav className="mt-8" aria-label="Alternative navigation links">

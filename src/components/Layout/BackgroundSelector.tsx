@@ -31,6 +31,12 @@ const backgrounds: Background[] = [
     name: 'Castle',
     url: '/assets/backgrounds/mario-world-4.svg',
     description: 'Purple sky and fortress towers'
+  },
+  {
+    id: 'world-1-1',
+    name: 'World 1-1',
+    url: '/assets/backgrounds/bg-1-1.png',
+    description: 'Classic Super Mario Bros level design'
   }
 ]
 
